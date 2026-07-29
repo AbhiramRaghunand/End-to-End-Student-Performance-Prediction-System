@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from src.exception import CustomException
 from src.logger import logging
-from src.utils import save_object,evaluate_models
+from src.utils import save_object,evaluate_models,read_yaml
 from dataclasses import dataclass
 #ML libs
 from sklearn.metrics import mean_squared_error,r2_score,mean_absolute_error
@@ -48,7 +48,10 @@ class ModelTrainer:
                 "GradientBoostRegressor":GradientBoostingRegressor()
             }
 
-            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models)
+            params = read_yaml("src/params.yaml")
+            model_params = params["model_params"]
+
+            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models,params=model_params)
 
             best_model_score=max(sorted(model_report.values()))
 

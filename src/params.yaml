@@ -1,0 +1,43 @@
+model_params:
+  LinearRegression: {}
+
+  Lasso:
+    alpha: [0.01, 0.1, 1.0]
+    max_iter: [1000]
+
+  Ridge:
+    alpha: [0.1, 1.0, 10.0]
+    solver: ["auto"]
+
+  K-Neighbours Regressor:
+    n_neighbors: [3, 5, 7]
+    weights: ["uniform", "distance"]
+
+  DecisionTreeRegressor:
+    max_depth: [None, 5, 10]
+    min_samples_split: [2, 5]
+
+  RandomForestRegressor:
+    n_estimators: [100, 200]
+    max_depth: [None, 10]
+    min_samples_split: [2]
+    min_samples_leaf: [1]
+
+  XGBRegressor:
+    n_estimators: [100, 200]
+    learning_rate: [0.05, 0.1]
+    max_depth: [3, 5]
+
+  CatBoostRegressor:
+    iterations: [100, 200]
+    learning_rate: [0.05, 0.1]
+    depth: [4, 6]
+
+  AdaBoostRegressor:
+    n_estimators: [50, 100]
+    learning_rate: [0.1, 1.0]
+
+  GradientBoostRegressor:
+    n_estimators: [100, 200]
+    learning_rate: [0.05, 0.1]
+    max_depth: [3, 5]
