@@ -149,7 +149,9 @@ activemq-data/
 
 # Environments
 catboost_info
-artifacts
+artifacts/*
+!artifacts/model.pkl
+!artifacts/preprocessor.pkl
 .env
 .envrc
 .venv
