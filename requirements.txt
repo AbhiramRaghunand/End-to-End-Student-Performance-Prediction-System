@@ -113,7 +113,6 @@ MarkupSafe==2.1.4
 matplotlib==3.10.0
 matplotlib-inline==0.1.6
 mistune==3.0.2
--e git+https://github.com/AbhiramRaghunand/MLProject.git@cae8f63093c95d9abcfa10fc1da5c8f3360cb0b4#egg=MLProject
 mpmath==1.3.0
 narwhals==1.24.1
 nbclient==0.9.0
