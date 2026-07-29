@@ -49,7 +49,6 @@ async def predict(request: Request):
         prediction_data = data.get_data_as_dataframe()
         predict_pipeline = PredictPipeline()
         prediction = predict_pipeline.predict(prediction_data)
-        # return templates.TemplateResponse("home.html", {"request": request, "prediction": round(float(prediction[0]), 2)})
         return templates.TemplateResponse(
             request,
             "home.html",
@@ -60,9 +59,8 @@ async def predict(request: Request):
             }
             )
     except Exception as e:
-        # return templates.TemplateResponse("home.html", {"request": request, "error": str(e)})
         return templates.TemplateResponse(
-            request,
+                request,
             "home.html",
             {
                 "request": request,
